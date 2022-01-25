@@ -11,7 +11,7 @@ let activeSlideIndex = 0;
 
 sidebar.style.top = `-${(slidesCount -1) * 100}vh`;
 
-console.log(slidesCount)
+console.log(slidesCount);
 
 upBtn.addEventListener('click', () => {
     changeSlide('up');
@@ -20,6 +20,14 @@ downBtn.addEventListener('click', () => {
     changeSlide('down');
 });
 
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') {
+        changeSlide('up');
+    }
+    else if (e.key === 'ArrowDown') {
+        changeSlide('down');
+    }
+});
 
 function changeSlide(direction) {
     if (direction === 'up') {
@@ -37,7 +45,7 @@ function changeSlide(direction) {
 
     const height = container.clientHeight;
     
-    mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
-    sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`
+    mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
+    sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
 
 }
