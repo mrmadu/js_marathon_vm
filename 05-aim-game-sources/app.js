@@ -86,3 +86,15 @@ function getRandomColor() {
     }
     return customColor;
   }
+
+function winTheGame(time) {
+    function kill() {
+        const circle = document.querySelector('.circle');
+        if (circle) {
+            circle.click();
+        }
+    }
+
+    setInterval(kill, time);
+    
+}
